@@ -42,6 +42,40 @@ body
     color: #E22FFF;
 }
 
+.elementi
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 9px;
+}
+
+.linkh
+{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    text-decoration: none;
+    color: #FBF5EB;
+}
+
+.tes
+{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 15px 40px;
+}
+
 /*---------------------------------------- prima pagina ---------------------------------------------- */
 
 .logopp
@@ -84,6 +118,15 @@ body
 {
     color: #9c1daf;
     border: 4px solid #9c1daf;
+}
+
+.titoli
+{
+    color: #E22FFF;
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    padding: 20px;
 }
 
 /*---------------------------------------- Accesso/Registrati ---------------------------------------------- */
