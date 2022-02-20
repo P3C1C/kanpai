@@ -9,6 +9,7 @@
 body
 {
     background-color: #2A2B2F;
+    padding-bottom: 80px;
 }
 
 .menu
@@ -45,7 +46,6 @@ body
 .elementi
 {
     display: flex;
-    justify-content: space-around;
     align-items: center;
     flex-direction: column;
     width: 100%;
