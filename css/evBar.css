@@ -1,0 +1,45 @@
+#underLineName{
+    color: #656360;
+    border: #656360 1px solid;
+    margin-top: -22px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+#titEventoBar{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 32px;
+    text-align: center;
+    color: #ffc200;
+    margin: 20px;
+}
+#picBar{
+    margin: auto;
+    height: 251px;
+    width: 357px;
+    background-color: aqua;
+    border-radius: 10px;
+}
+#titolo{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    margin: 20px;
+    color: #fff;
+    font-size: 30px;
+}
+#datOra{
+    display: flex;
+    
+}
+.undLineTxt{
+    margin-top: -3px;
+}
+.txt{
+    margin: auto;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: #fff;
+    display: inline-block;
+}
