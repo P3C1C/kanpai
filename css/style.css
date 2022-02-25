@@ -193,3 +193,62 @@ body
 {
     background-color: #E22FFF;
 }
+
+/*---------------------------------------- Area Personale ---------------------------------------------- */
+
+.aPerTxt
+{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    text-align: left;
+    margin-bottom: 32px;
+}
+
+.aPerTxt > a
+{
+    color: white;
+    text-decoration: none;
+}
+
+.aPerTxt > a:hover
+{
+    color: #ffc200;
+    text-decoration: none;
+}
+
+#areaPersonale
+{
+    text-align: left;
+    margin-top: 40px;
+    margin-left: 27px;
+    color: #e22fff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+}
+
+#imgProfilo
+{
+    height: 184px;
+    width: 184px;
+    margin-left: auto;
+    margin-right: auto;
+    /* background-image: url(../img/imgUser.png ); */
+    border-radius: 100px;
+}
+
+#nomeUtente
+{
+    margin: 16px 0px;
+    text-align: center;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.ico
+{
+    margin: 0px 40px;
+}
