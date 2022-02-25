@@ -143,3 +143,24 @@ body
 {
     background-color: #E22FFF;
 }
+/*---------------------------------------- pagina bar ---------------------------------------------- */
+#freccia{
+    
+   padding: 10px;
+}
+#carosello{
+    margin: 10px;
+}
+
+#nomebar{
+    font-family: 'Poppins', sans-serif; 
+    color: #E22FFF;
+    font-weight: 700;
+    font-size: 24px;
+}
+#indirizzo{
+    font-size: 18px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
