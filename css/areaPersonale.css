@@ -28,7 +28,7 @@
     margin-top: 34px;
     margin-left: auto;
     margin-right: auto;
-    background-image: url(../img/imgUser.png );
+    /* background-image: url(../img/imgUser.png ); */
     z-index: 2;
     border-radius: 100px;
 }
@@ -37,7 +37,7 @@
     background-position: center;
     background-repeat: no-repeat;
     z-index: 3;
-    opacity: 20%;
+    opacity: 40%;
 }
 #nomeUtente{
     margin-top: 37px;
