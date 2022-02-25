@@ -52,7 +52,14 @@ body
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
     font-size: 9px;
+    flex-wrap: wrap;
 }
+@media only screen and (min-width: 600px) {
+    .elementi {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  }
 
 .linkh
 {
