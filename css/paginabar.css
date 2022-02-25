@@ -51,7 +51,7 @@ body
  
  #nomebar{
      font-family: 'Poppins', sans-serif; 
-     color: #E22FFF;
+     color: #FFC200;
      font-weight: 700;
      font-size: 22px;
  }
@@ -83,7 +83,7 @@ body
 #titolo{
     font-family: 'Poppins', sans-serif;
     padding-left: 15px;
-    color: #E22FFF;
+    color: #FFC200;
     font-weight: 700;
     font-size: 22px;
 }
