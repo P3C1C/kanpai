@@ -4,15 +4,7 @@
     font-weight: 400;
     font-size: 16px;
     text-align: left;
-}
-.leftSpace{
-    width: 20px;
-    height: 20px;
-    background-color: aqua;
-}
-.leftCenter{
-    display: inline-block;
-}
+}   
 #areaPersonale{
     text-align: left;
     margin-top: 40px;
