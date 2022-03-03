@@ -52,7 +52,14 @@ body
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
     font-size: 9px;
+    flex-wrap: wrap;
 }
+@media only screen and (min-width: 600px) {
+    .elementi {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  }
 
 .linkh
 {
@@ -87,7 +94,7 @@ body
 .pp
 {
     text-align: center;
-    margin-top: 132px;
+    margin-top: 30%;
 }
 
 .btn
@@ -186,3 +193,142 @@ body
 {
     background-color: #E22FFF;
 }
+
+/*---------------------------------------- Area Personale ---------------------------------------------- */
+
+.aPerTxt
+{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    text-align: left;
+    margin-bottom: 32px;
+}
+
+.aPerTxt > a
+{
+    color: white;
+    text-decoration: none;
+}
+
+.aPerTxt > a:hover
+{
+    color: #ffc200;
+    text-decoration: none;
+}
+
+#areaPersonale
+{
+    text-align: left;
+    margin-top: 40px;
+    margin-left: 27px;
+    color: #e22fff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+}
+
+#imgProfilo
+{
+    height: 184px;
+    width: 184px;
+    margin-left: auto;
+    margin-right: auto;
+    /* background-image: url(../img/imgUser.png ); */
+    border-radius: 100px;
+}
+
+#nomeUtente
+{
+    margin: 16px 0px;
+    text-align: center;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.ico
+{
+    margin: 0px 40px;
+}
+
+/*---------------------------------------- prima pagina ----------------------------------------------*/
+
+#freccia
+{
+    
+    padding: 10px;
+}
+
+#nomebar
+{
+    font-family: 'Poppins', sans-serif; 
+    color: #FFC200;
+    font-weight: 700;
+    font-size: 22px;
+}
+
+#indirizzo
+{
+    font-size: 16px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+#info
+{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 15px;
+}
+
+#cuorebar
+{
+    margin: 12px;
+}
+
+#descrizione
+{
+    padding-left: 15px;
+    padding-right: 15px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+#fotobar2
+{
+    height: 80px;
+    width: 120px;
+    
+}
+
+#fotobar2 img
+{
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+}
+
+#eventi
+{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 60px;
+}
+
+#eventid
+{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    color: white;
+    padding-top: 15px;
+}
+
