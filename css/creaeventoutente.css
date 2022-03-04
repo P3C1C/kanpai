@@ -7,6 +7,7 @@
 body
 {
     background-color: #2A2B2F;
+    color: white;
 }
 
 .menu
@@ -43,3 +44,37 @@ body
 #freccia{
     padding: 10px;
 }
+
+#flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: 'Poppins', sans-serif;
+}
+
+#creaevento{
+    font-size: 24px;
+    color: #E22FFF;
+    font-weight: 600;
+    padding-top: 18px;
+    margin-left: -20px;
+}
+
+#conferma{
+    background-color: #2A2B2F;
+    border-color:#E22FFF;
+    color: white;
+    border-radius: 5px;
+    font-size: 9px;
+    margin-top: 29px;
+    margin-right: 10px;
+}
+
+#fotobarevento img{
+    width: 310px;
+}
+
+#fotobarevento{
+    text-align: center;
+}
+
