@@ -38,23 +38,24 @@ body
 
 .link:hover
 {
-    color: #E22FFF;
+    color: #D37BEA;
 }
 
 #freccia{
     padding: 10px;
 }
 
-#flex-container {
+#flex-container{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     font-family: 'Poppins', sans-serif;
+
 }
 
 #creaevento{
     font-size: 24px;
-    color: #E22FFF;
+    color: #FFC200;
     font-weight: 600;
     padding-top: 18px;
     margin-left: -20px;
@@ -62,7 +63,7 @@ body
 
 #conferma{
     background-color: #2A2B2F;
-    border-color:#E22FFF;
+    border-color:#D37BEA;
     color: white;
     border-radius: 5px;
     font-size: 9px;
@@ -76,5 +77,55 @@ body
 
 #fotobarevento{
     text-align: center;
+}
+
+#nomevento{
+    margin: auto;
+    text-align: center;
+    width: 300px;
+    height: 30px;
+    margin-top: 10px;
+}
+
+#inputce{
+    background-color: #2A2B2F;
+    border: 0;
+    border-bottom: 2px solid #656360;
+    height: 30px;
+    width: 300px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    color: white;
+    font-weight: 600;
+}
+
+#inputce ::placeholder{
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    
+}
+
+#luogo{
+    color: #D37BEA;
+    font-weight: 600;
+    margin-left: 25px;
+    margin-top: 10px;
+}
+
+#part{
+    color: #D37BEA;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-right: 60px;
+}
+
+#inputluogo{
+    height: 20px;
+    width: 100px;
+    background-color: #656360;
+    border: 0;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    border-radius: 5px;
 }
 
