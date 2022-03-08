@@ -16,7 +16,6 @@
     <div id="flex-container">
         <div id="freccia" class="flex-item"> <img src="../img/left arrow.png" alt="freccia"></div>
         <div id="creaevento" class="flex-item">Crea evento</div>
-        <div id="bottone" class="flex-item"><button id="conferma">CONFERMA <i class="bi bi-check-lg"></i></button></div>
     </div>
     <div id="fotobarevento"><img src="../img/foto_bar.png" alt=""></div> 
     <div id="nomevento"><input type="text" name="nomeevento" id="inputce" placeholder="Nome evento"></div>
@@ -26,12 +25,52 @@
             Luogo
             <div><input type="text" id="inputluogo" placeholder="Nome bar"></div>
         </div>
-        <div id="part">N° Part.</div>
+        <div id="part">
+            N° Part.
+            <div><i class="bi bi-person-fill"></i><input type="text" id="inputpart" placeholder="000"></div>
+        </div>
     </div>
 
+    <div id="flex-container" class="dati2">
+        <div id="data">
+            Data
+            <div><input type="date" id="inputdata"></div>
+        </div>
+        <div id="ora">
+            Orario
+            <div><input type="time" id="inputora"></div>
+        </div>
+    </div>
+
+    <div id="categoria">
+        <span id="titolocat">Categoria</span>
+        <div><select name="categorie" id="menucat">
+            <option value="musica">Musica</option>
+            <option value="film_serietv">Film/Serie tv</option>
+            <option value="videogiochi">Videogiochi</option>
+            <option value="sport">Sport</option>
+            <option value="informatica">Informatica</option>
+            <option value="manga_anime">Manga/Anime</option>
+            <option value="macchine">Macchine</option>
+            <option value="cibo">Cibo</option>
+            <option value="vino">Vino</option>
+            <option value="libri">Libri</option>
+        </select></div>
+    </div>
+
+    <div id="descrizionevento">
+        <span id="titolodesc">Descrizione</span>
+        <div><textarea name="inputdesc" id="inputdesc" cols="30" rows="10" maxlength="50" placeholder="Inserisci delle informazioni aggiuntive"></textarea></div>
+    </div>
+<br><br>
+
+<div id="bottonecrea">
+    <button id="btncrea"><i class="bi bi-plus-circle-fill"></i> Crea</button>
+</div>
+<br><br><br><br>
     <div class="menu">
         <a href="#" class="link">
-            <img src="../img/casa.png" alt="casa">
+            <img src="../img/bx_bxs-home-circle.png" alt="casa">
             Home
         </a>
         <a href="#" class="link">
@@ -39,7 +78,7 @@
             Preferiti
         </a>
         <a href="#" class="link">
-            <img src="../img/bx_bx-plus-circle.png" alt="zircles">
+            <img src="../img/bx_bx-plus-circle-full.png" alt="zircles">
         </a>
         <a href="#" class="link">
             <img src="../img/bx_bxs-drink.png" alt="bicchiere">
