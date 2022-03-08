@@ -52,12 +52,38 @@
                 <img src="../img/priv.png" class="ico" alt="">privacy
             </a>
         </div>
-        <div id="logOut" class="aPerTxt col-lg-12">
-            <a href="#">
+        <div id="logOut" class="aPerTxt col-lg-12" >
+            <a href="#" onclick="show()">
                 <img src="../img/logOut.png" class="ico" alt="">Log Out
             </a>
         </div>
     </div>
+
+<!-- ----------------------- logOut ---------------------------------------->
+<div id="sfondoLogOut">
+</div>
+    <div id="contLogOut">
+        <div id="inLogOut">
+            Sicuro di voler uscire? 
+        </div>
+        <div id="confAnn">
+            <div class="confAnn" id="conferma">
+                <a href="accesso.html" style="color: white;">
+                Conferma
+
+                </a>
+            </div>
+            <div class="confAnn" id="annulla" onclick="notShow()">
+                <a style="color: white;">
+                    Annulla
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+
 <!-- ----------------------- Menu ---------------------------------------->
 
     <div class="menu">
@@ -65,7 +91,7 @@
             <img src="../img/bx_bxs-home-circle.png" alt="casa">
             Home
         </a>
-        <a href="#" class="link">
+        <a href="preferiti.html" class="link">
             <img src="../img/bx_bxs-heart.png" alt="cuore">
             Preferiti
         </a>
@@ -81,7 +107,20 @@
             Profilo
         </a>
     </div>
+
+    
     <script src="../js/script.js"></script>
+    <script>
+        function show(){
+            document.getElementById("contLogOut").style.display = "block";
+            document.getElementById("sfondoLogOut").style.display = "block";
+            
+        }
+        function notShow(){
+            document.getElementById("contLogOut").style.display = "none";
+            document.getElementById("sfondoLogOut").style.display = "none";
+        }
+    </script>
 </body>
 
 </html>
