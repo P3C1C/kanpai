@@ -515,3 +515,146 @@ body
     margin-bottom: 20px;
     margin-top: -80px;
 }
+/*---------------------------------------- Preferiti ---------------------------------------------- */
+.preferiti
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.pref
+{
+    display: flex;
+    flex-direction: column;
+    width: 175px;
+    text-decoration: none;
+    margin: 5px;
+}
+.testo
+{
+    font-family: 'Poppins', 'sans-serif';
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    margin-top: 8px;
+}
+
+/*---------------------------------------- evento Utente ----------------------------------------------*/
+
+#underLineName{
+    color: #656360;
+    border: #656360 1px solid;
+}
+ /* Luogo - N. Partecipanti */
+.bigContenitore{
+    display: flex;
+    width: 100%;
+    height: 100px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* flex-direction: row; */
+}
+.innContenitore{
+    display: flex;
+    width: 50%;
+    height: 60px;
+    align-items: center;
+    flex-direction: column ;
+    justify-self: center;
+}
+.item{
+    align-self: left;
+}
+
+#titEventoBar{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 32px;
+    text-align: center;
+    color: #ffc200;
+}
+#picBar{
+    margin: auto;
+    height: 251px;
+    width: 357px;
+    background-color: aqua;
+    border-radius: 10px;
+}
+#titolo{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: #fff;
+    font-size: 30px;
+}
+.txt{
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: #fff;
+    display: inline-block;
+}
+#descrizione{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+}
+.eqTitle{
+    font-size: 18px;
+    color: #D37BEA  ;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+.eqInner{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: #fff;
+    margin: auto;
+    border-radius: 10px;
+    padding-left: 5px;
+    padding-right: 5px ;
+    text-align: left;
+}
+#descrizione{
+    margin: auto;
+    height: 180px;
+    width: 335px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: medium;
+    margin-top: -10px;
+    color: #D37BEA;
+}
+#locazione{
+    color: #ffc200;
+}
+.cat{
+    width: 85px;
+    height: 15px;
+    font-size: 9px;
+    color: #222;
+    padding: auto ;
+}
+#carHent{
+    border-radius: 20px;
+    background-color: #00EB5E;
+    text-align: center;
+}
+#join{
+    height: 45px;
+    width: 110px;
+    background-color: #ffc200;
+    text-align: center;
+    border-radius: 20px;
+    font-size: 14px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: #fff;
+    margin: auto;
+}
