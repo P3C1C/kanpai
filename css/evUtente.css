@@ -1,9 +1,26 @@
 #underLineName{
     color: #656360;
     border: #656360 1px solid;
-    margin-top: -22px;
-    margin-left: 15px;
-    margin-right: 15px;
+}
+ /* Luogo - N. Partecipanti */
+.bigContenitore{
+    display: flex;
+    width: 100%;
+    height: 100px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* flex-direction: row; */
+}
+.innContenitore{
+    display: flex;
+    width: 50%;
+    height: 60px;
+    align-items: center;
+    flex-direction: column ;
+    justify-self: center;
+}
+.item{
+    align-self: left;
 }
 
 #titEventoBar{
@@ -12,7 +29,6 @@
     font-size: 32px;
     text-align: center;
     color: #ffc200;
-    margin: 20px;
 }
 #picBar{
     margin: auto;
@@ -24,19 +40,10 @@
 #titolo{
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
-    margin: 20px;
     color: #fff;
     font-size: 30px;
 }
-#datOra{
-    display: flex;
-    
-}
-.undLineTxt{
-    margin-top: -3px;
-}
 .txt{
-    margin: auto;
     font-size: 18px;
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
@@ -44,28 +51,15 @@
     display: inline-block;
 }
 #descrizione{
-    margin: auto;
-    margin-top: 15px;
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
     font-size: 18px;
 }
-#unDesc{
-    margin-top: -5px;
-}
 .eqTitle{
-    margin: auto;
-    margin-bottom: 25px;
-    padding: 10px;
     font-size: 18px;
     color: #D37BEA  ;
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
-    margin-top: -10px;
-    display: inline-block;
-    display: inline-block;
-    text-align: left;
-    width: 200px;
 }
 .eqInner{
     font-family: 'Poppins', sans-serif;
@@ -92,8 +86,6 @@
     color: #D37BEA;
 }
 #locazione{
-    margin-top: -28px;
-    margin-left: 110px;
     color: #ffc200;
 }
 .cat{
@@ -102,12 +94,10 @@
     font-size: 9px;
     color: #222;
     padding: auto ;
-
 }
 #carHent{
     border-radius: 20px;
     background-color: #00EB5E;
-    padding-top: 2px;
     text-align: center;
 }
 #join{
@@ -116,12 +106,11 @@
     background-color: #ffc200;
     text-align: center;
     border-radius: 20px;
-    padding-top: 12px;
     font-size: 14px;
+    margin-top: 25px;
+    margin-bottom: 25px;
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
     color: #fff;
     margin: auto;
-    margin-bottom: 20px;
-    margin-top: -60px;
 }
