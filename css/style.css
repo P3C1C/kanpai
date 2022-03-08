@@ -442,3 +442,27 @@ body
     margin-bottom: 20px;
     margin-top: -80px;
 }
+/*---------------------------------------- Preferiti ---------------------------------------------- */
+.preferiti
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.pref
+{
+    display: flex;
+    flex-direction: column;
+    width: 175px;
+    text-decoration: none;
+    margin: 5px;
+}
+.testo
+{
+    font-family: 'Poppins', 'sans-serif';
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    margin-top: 8px;
+}
