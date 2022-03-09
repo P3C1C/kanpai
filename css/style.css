@@ -340,7 +340,7 @@ body
 
 
 
-/*---------------------------------------- prima pagina ----------------------------------------------*/
+/*---------------------------------------- pagina bar ----------------------------------------------*/
 
 #freccia
 {
@@ -378,7 +378,7 @@ body
     margin: 12px;
 }
 
-#descrizione
+#descbar
 {
     padding-left: 15px;
     padding-right: 15px;
@@ -594,11 +594,6 @@ body
     color: #fff;
     display: inline-block;
 }
-#descrizione{
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 18px;
-}
 .eqTitle{
     font-size: 18px;
     color: #D37BEA  ;
@@ -657,4 +652,322 @@ body
     font-weight: bold;
     color: #fff;
     margin: auto;
+}
+
+/*---------------------------------------- crea evento utente ---------------------------------------------- */
+
+#freccia{
+    padding: 10px;
+}
+
+#flex-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+#creaevento{
+    font-size: 24px;
+    color: #FFC200;
+    font-weight: 600;
+    padding-top: 18px;
+    padding-right: 90px;
+}
+
+#fotobarevento img{
+    width: 310px;
+}
+
+#fotobarevento{
+    text-align: center;
+}
+
+#nomevento{
+    margin: auto;
+    text-align: center;
+    width: 300px;
+    height: 30px;
+    margin-top: 10px;
+}
+
+#inputce{
+    background-color: #2A2B2F;
+    border: 0;
+    border-bottom: 2px solid #656360;
+    height: 30px;
+    width: 300px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    color: white;
+    font-weight: 600;
+}
+
+#inputce ::placeholder{
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    
+}
+
+::placeholder{
+    font-weight: 600;
+    padding-left: 5px;
+}
+
+#luogo{
+    color: #D37BEA;
+    font-weight: 600;
+    margin-left: 25px;
+    margin-top: 10px;
+}
+
+#part{
+    color: #D37BEA;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-right: 60px;
+}
+
+#inputluogo{
+    width: 120px;
+    background-color: #656360;
+    border: 0;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    border-radius: 5px;
+}
+
+#inputpart{
+    width: 40px;
+    background-color: #656360;
+    border: 0;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    border-radius: 5px;
+}
+
+#data{
+    color: #D37BEA;
+    font-weight: 600;
+    margin-left: 25px;
+    margin-top: 10px;
+}
+
+#ora{
+    color: #D37BEA;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-right: 60px;
+    text-align: center;
+}
+
+#inputdata{
+    width: 145px;
+    background-color: #656360;
+    border: 0;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+
+#inputora{
+    text-align: center;
+    width: 75px;
+    background-color: #656360;
+    border: 0;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+
+#categoria{
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
+    margin-left: 25px;
+}
+
+#titolocat{
+    color: #D37BEA;
+    font-weight: 600;
+}
+
+#menucat{
+    background-color: #656360;
+    border: 0;
+    border-radius: 5px;
+    color: white;
+}
+
+#descrizionevento{
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
+    margin-left: 25px;
+}
+
+#titolodesc{
+    color: #D37BEA;
+    font-weight: 600;
+}
+
+#inputdesc{
+    width: 300px;
+    height: 200px;
+    background-color: #656360;
+    border: 0;
+    color: white;
+    border-radius: 5px;
+}
+
+#bottonecrea{
+    width: 100%;
+    text-align: center;
+}
+
+#btncrea{
+    border: 0;
+    background-color: #FFC200;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-weight: 600;
+    width: 110px;
+    height: 45px;
+    text-align: center;
+    border-radius: 30px;
+}
+
+/*---------------------------------------- crea evento bar ---------------------------------------------- */
+
+#freccia{
+    padding: 10px;
+}
+
+#flex-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+#creaevento{
+    font-size: 24px;
+    color: #FFC200;
+    font-weight: 600;
+    padding-top: 18px;
+    padding-right: 90px;
+}
+
+#fotobarevento img{
+    width: 310px;
+}
+
+#fotobarevento{
+    text-align: center;
+}
+
+#nomevento{
+    margin: auto;
+    text-align: center;
+    width: 300px;
+    height: 30px;
+    margin-top: 10px;
+}
+
+#inputce{
+    background-color: #2A2B2F;
+    border: 0;
+    border-bottom: 2px solid #656360;
+    height: 30px;
+    width: 300px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    color: white;
+    font-weight: 600;
+}
+
+#inputce ::placeholder{
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    
+}
+
+::placeholder{
+    font-weight: 600;
+    padding-left: 5px;
+}
+
+#data{
+    color: #D37BEA;
+    font-weight: 600;
+    margin-left: 25px;
+    margin-top: 10px;
+}
+
+#ora{
+    color: #D37BEA;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-right: 60px;
+    text-align: center;
+}
+
+#inputdata{
+    width: 145px;
+    background-color: #656360;
+    border: 0;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+
+#inputora{
+    text-align: center;
+    width: 75px;
+    background-color: #656360;
+    border: 0;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+
+#descrizionevento{
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
+    margin-left: 25px;
+}
+
+#titolodesc{
+    color: #D37BEA;
+    font-weight: 600;
+}
+
+#inputdesc{
+    width: 300px;
+    height: 200px;
+    background-color: #656360;
+    border: 0;
+    color: white;
+    border-radius: 5px;
+}
+
+#bottonecrea{
+    width: 100%;
+    text-align: center;
+}
+
+#btncrea{
+    border: 0;
+    background-color: #FFC200;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-weight: 600;
+    width: 110px;
+    height: 45px;
+    text-align: center;
+    border-radius: 30px;
 }
