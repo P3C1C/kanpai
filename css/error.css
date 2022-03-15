@@ -1,0 +1,46 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    background-color: #2A2B2F;
+    padding-bottom: 80px;
+}
+.logopp{
+    padding-top: 50px;
+    background-color: #FBF5EB;
+}
+#contenutoerror{
+    margin-top: 50px;
+    color: white;
+    font-family: 'Poppins', sans-serif; 
+    font-weight: 700;
+    text-align: center;
+}
+
+#titoloerror{
+    font-size: 50px;
+}
+#testoerror{
+    font-size: 16px;
+}
+
+#bottoneriprova{
+    text-align: center;
+}
+
+#btnriprova{
+    border: 0;
+    background-color: #FF2E00;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-weight: 600;
+    width: 110px;
+    height: 45px;
+    text-align: center;
+    border-radius: 30px;
+}

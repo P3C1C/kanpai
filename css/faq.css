@@ -1,0 +1,71 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    background-color: #2A2B2F;
+}
+
+.menu
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    bottom: 0px;
+    border-radius: 20px;
+    background-color: #222222;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 9px;
+}
+
+.link
+{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-decoration: none;
+    color: #FBF5EB;
+}
+
+.link:hover
+{
+    color: #D37BEA;
+}
+
+#freccia{
+    
+    padding: 10px;
+}
+
+#titolofaq{
+    font-size: 25px;
+    font-family: 'Poppins', sans-serif; 
+    color: #FFC200;
+    font-weight: 700;
+    text-align: center;
+    
+}
+
+#paragrafi{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.domanda{
+    color: #D37BEA;
+    font-family: 'Poppins', sans-serif; 
+    font-weight: 700;
+}
+
+.risposta{
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
