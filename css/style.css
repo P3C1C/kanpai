@@ -42,7 +42,7 @@ body
 
 .link:hover
 {
-    color: #E22FFF;
+    color: #d37bea;
 }
 
 .elementi
@@ -106,7 +106,7 @@ body
     width: 192px;
     height: 48px;
     margin-bottom: 24px;
-    border: 4px solid #E22FFF;
+    border: 4px solid #d37bea;
     color: #FBF5EB;
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
@@ -114,7 +114,7 @@ body
 
 #reg
 {
-    background-color: #E22FFF;
+    background-color: #d37bea;
 }
 
 #reg:hover
@@ -132,7 +132,7 @@ body
 
 .titoli
 {
-    color: #E22FFF;
+    color: #d37bea;
     font-family: 'Poppins', sans-serif;
     font-size: 32px;
     font-weight: 700;
@@ -194,7 +194,7 @@ body
 }
 #btnu
 {
-    background-color: #E22FFF;
+    background-color: #d37bea;
 }
 
 /*---------------------------------------- Area Personale ---------------------------------------------- */
@@ -225,7 +225,7 @@ body
     text-align: left;
     margin-top: 40px;
     margin-left: 27px;
-    color: #e22fff;
+    color: #d37bea;
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
     font-size: 32px;
