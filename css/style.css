@@ -139,6 +139,15 @@ body
     padding: 20px;
 }
 
+#categ
+{
+    background-color: #D37BEA;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 4px;
+}
+
 /*---------------------------------------- Accesso/Registrati ---------------------------------------------- */
 
 .accesso
