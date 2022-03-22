@@ -1,0 +1,13 @@
+#bottonePred{
+    height: 45px;
+    width: 140px;
+    display: flex;
+    justify-items: center;
+}
+
+#botonConfMod{
+    background-color: #3DA424;
+    color:  white;
+    border-radius: 10px;
+    
+}
