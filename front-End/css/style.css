@@ -191,7 +191,7 @@ body {
     padding-left: 16px;
     width: 216px;
     height: 32px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     border: none;
     color: #fbf5eb;
     background-color: #656360;
@@ -205,15 +205,32 @@ body {
 }
 
 .btn-group {
-    width: 216px;
+    width: 200px;
+    margin-bottom: 6px;
 }
 
-.btng {
-    background-color: #656360;
+.gruppo
+{
+    
+    margin-bottom: 24px;
     border: none;
+    width: 100px;
+    padding: 10px 10px;
+    background-color: #656360;
+    color: #fbf5eb;
+    font-size: 16px;
+    font-weight: 700;
 }
+
 #btnu {
     background-color: #d37bea;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+#btnb {
+    background-color: #656360;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 /*---------------------------------------- Eventi ---------------------------------------------- */
@@ -693,7 +710,7 @@ input[type="checkbox"]:checked::before {
     border: 0;
 }
 
-.bottoneris > button {
+.bottoneris > a > button {
     border: 0;
     color: white;
     font-weight: 600;
