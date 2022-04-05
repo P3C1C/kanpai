@@ -12,20 +12,23 @@ if ($conn->connect_error) {
 }
 
 $doppione = false;
-$sqle = "SELECT email FROM bar";
-$result = $conn->query($sqle);
+$sql = "SELECT email FROM bar";
+$result = $conn->query($sql);
 
-foreach ($result as $x) {
-  if ($x == $_POST['email']) {
+while($row = $result->fetch_assoc()) 
+{
+  if($row["email"] == $_POST["email"])
+  {
     $doppione = true;
   }
 }
 
-if ($result) {
+if($doppione == true){
   header('Location: error.php');
-} else {
-  $sql = "INSERT INTO `bar` (`idBar`, `nome`, `email`, `password`, `nCivico`, `descrizione`, `idIndirizzo`) 
-          VALUES (NULL, '$_POST[nome]', '$_POST[email]', '$_POST[password]', '$_POST[civico]', '', '3');";
+}
+else{
+$sql = "INSERT INTO `bar` (`idBar`, `nome`, `email`, `password`, `nCivico`, `descrizione`, `idIndirizzo`) 
+        VALUES (NULL, '$_POST[nome]', '$_POST[email]', '$_POST[password]', '$_POST[civico]', '', '3');";
 
   if ($conn->query($sql) === TRUE) {
     header('Location: successo.php');
@@ -33,5 +36,4 @@ if ($result) {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }
 }
-
 $conn->close();

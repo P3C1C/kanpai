@@ -26,17 +26,19 @@
 
     <div class="accesso">
         <div class="titolo">ACCEDI</div>
-        <div>
-            <input type="text" placeholder="E-mail" class="inte" />
-        </div>
-        <div>
-            <input type="text" placeholder="Password" class="inte" />
-        </div>
-        <div>
-            <a href="home.html">
-                <input type="button" value="Accedi" class="btn" />
-            </a>
-        </div>
+        <form action="../../back-End/accedi.php" method="post">
+            <div>
+                <input type="text" name="email" placeholder="E-mail" class="inte" />
+            </div>
+            <div>
+                <input type="password" name="password" placeholder="Password" class="inte" />
+            </div>
+            <div>
+                <a href="home.html">
+                    <input type="submit" value="Accedi" class="btn" />
+                </a>
+            </div>
+        </form>
     </div>
     <script src="../js/script.js"></script>
 </body>

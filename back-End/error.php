@@ -36,10 +36,10 @@
     <br />
 
     <div class="bottoneris">
-        <a href="../front-End/file/registrati.html">
-        <button id="btnriprova">
-            <i class="bi bi-arrow-clockwise"></i> Riprova
-        </button>
+        <a href="../front-End/index.html">
+            <button id="btnriprova">
+                <i class="bi bi-arrow-clockwise"></i> Riprova
+            </button>
         </a>
     </div>
 
