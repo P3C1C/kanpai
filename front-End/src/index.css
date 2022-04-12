@@ -1,0 +1,739 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+a {
+    text-decoration: none;
+}
+body {
+    background-color: #2a2b2f;
+    padding-bottom: 80px;
+}
+
+/*---------------------------------------- Bottoni standard ---------------------------------------------- */
+
+.btn {
+    width: 160px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    padding: 10px 0px;
+    border: 4px solid #ffc200;
+    background-color: #ffc200;
+    color: #222;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.btn:hover {
+    background-color: #d1a000;
+    border: 4px solid #d1a000;
+}
+
+#acc {
+    background-color: transparent;
+    color: #fbf5eb; 
+}
+
+#acc:hover {
+    color: #d1a000;
+    border: 4px solid #d1a000;
+}
+
+/*---------------------------------------- logo ---------------------------------------------- */
+
+.logo {
+    padding-top: 50px;
+    background-color: #fbf5eb;
+    text-align: center;
+}
+
+/*---------------------------------------- titolo bold 18 ---------------------------------------------- */
+
+.titolo {
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #fbf5eb;
+}
+
+/*---------------------------------------- titolo bold 32 ---------------------------------------------- */
+
+.titoli {
+    color: #ffc200;
+    font-size: 32px;
+    font-weight: 700;
+    padding: 20px;
+}
+
+/*---------------------------------------- sottotitolo ---------------------------------------------- */
+
+.sottotitolo {
+    font-size: 16px;
+    padding: 20px;
+    color: #fbf5eb;
+    font-weight: 700;
+}
+
+/*---------------------------------------- freccia ---------------------------------------------- */
+
+.freccia {
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/*---------------------------------------- Menù ---------------------------------------------- */
+
+.menu {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    bottom: 0px;
+    border-radius: 20px;
+    background-color: #222222;
+    font-weight: 700;
+    font-size: 9px;
+}
+
+.link {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-decoration: none;
+    color: #fbf5eb;
+}
+
+.link:hover {
+    color: #d37bea;
+}
+
+/*---------------------------------------- Elementi ---------------------------------------------- */
+
+.elementi {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    font-weight: 700;
+    font-size: 9px;
+    flex-wrap: wrap;
+}
+@media only screen and (min-width: 600px) {
+    .elementi {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+.linkh {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    text-decoration: none;
+    color: #fbf5eb;
+}
+
+.tes {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    font-weight: 700;
+    padding: 15px 20px;
+    width: 200px;
+}
+
+.t1 {
+    color: #ffc200;
+    font-size: 18px;
+}
+
+.t2 {
+    font-size: 16px;
+}
+
+.t3 {
+    font-size: 14px;
+}
+
+/*---------------------------------------- prima pagina ---------------------------------------------- */
+
+.logopp {
+    padding-top: 50px;
+    background-color: #fbf5eb;
+}
+
+.pp {
+    text-align: center;
+    margin-top: 30%;
+}
+
+/*---------------------------------------- Accesso/Registrati ---------------------------------------------- */
+
+.accesso {
+    text-align: center;
+    margin-top: 134px;
+}
+
+.registrati {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.inte {
+    border-radius: 5px;
+    padding-left: 16px;
+    width: 216px;
+    height: 32px;
+    margin-bottom: 30px;
+    border: none;
+    color: #fbf5eb;
+    background-color: #656360;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+::placeholder {
+    font-weight: 500;
+    color: #fbf5eb9f;
+}
+
+.btn-group {
+    width: 200px;
+    margin-left: 50%;
+    position: relative;
+    left: -100px;
+    margin-bottom: -18px;
+}
+
+.gruppo {
+    margin-bottom: 24px;
+    border: none;
+    width: 100px;
+    padding: 10px 10px;
+    background-color: #656360;
+    color: #fbf5eb;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.select{
+    background-color: #d37bea;
+}
+
+#btnu {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+#btnb {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/*---------------------------------------- Eventi ---------------------------------------------- */
+
+#picBar {
+    margin: auto;
+    height: 256px;
+    width: 320px;
+    background-color: aqua;
+    border-radius: 10px;
+}
+
+.titoloEventi {
+    font-weight: 700;
+    text-align: center;
+    margin: 20px;
+    color: #fbf5eb;
+    font-size: 30px;
+}
+
+.informazioni {
+    display: flex;
+    padding: 10px 0px;
+}
+
+.bioDesc {
+    text-align: center;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 18px;
+    color: #fbf5eb;
+    font-weight: 400;
+}
+
+.descrEvBar {
+    margin-top: 15px;
+    font-weight: 700;
+    font-size: 18px;
+    color: #d37bea;
+}
+
+.innContenitore {
+    display: flex;
+    width: 50%;
+    height: 60px;
+    align-items: center;
+    flex-direction: column;
+    justify-self: center;
+}
+
+.eqTitle {
+    font-size: 18px;
+    color: #d37bea;
+    font-weight: bold;
+}
+
+.eqInner {
+    font-weight: 400;
+    font-size: 18px;
+    color: #fbf5eb;
+    margin: auto;
+    border-radius: 10px;
+    padding-left: 5px;
+    text-align: left;
+}
+
+.cat {
+    width: 85px;
+    height: 15px;
+    font-size: 9px;
+    color: #222;
+    padding: auto;
+}
+
+#carHent {
+    border-radius: 10px;
+    background-color: #00eb5e;
+    text-align: center;
+}
+
+/*---------------------------------------- pagina bar ---------------------------------------------- */
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 20px;
+    margin-top: 15px;
+}
+
+.cuorebar {
+    display: flex;
+    align-items: center;
+}
+
+.descbar {
+    padding: 15px;
+    color: #fbf5eb;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/*---------------------------------------- area personale ---------------------------------------------- */
+
+.imgProfilo {
+    height: 184px;
+    width: 184px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 100px;
+}
+
+.aPerTxt {
+    font-weight: 700;
+    font-size: 20px;
+    text-align: left;
+    margin-bottom: 32px;
+}
+
+.aPerTxt > a {
+    color: #fbf5eb;
+}
+
+.aPerTxt > a:hover {
+    color: #ffc200;
+}
+
+.ico {
+    margin: 0px 40px;
+}
+
+#sfondoLogOut {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    background-color: grey;
+    top: 0;
+    display: none;
+}
+
+#contLogOut {
+    position: fixed;
+    z-index: 2;
+    background-color: #2a2b2f;
+    width: 315px;
+    height: 195px;
+    top: calc(60% - (195px / 2));
+    left: calc(50% - (315px / 2));
+    padding-top: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-content: space-around;
+    border-radius: 20px;
+    display: none;
+}
+
+#inLogOut {
+    color: #fbf5eb;
+    font-size: 24px;
+    font-weight: medium;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.confAnn {
+    flex-direction: row;
+    text-align: center;
+    line-height: 32px;
+    border-radius: 8px;
+}
+
+#conferma {
+    height: 32px;
+    width: 120px;
+    border: 4px solid #ffc200;
+    line-height: 22px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+#confAnn {
+    display: inline-flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+#annulla {
+    height: 32px;
+    width: 120px;
+    border: 4px solid #ffc200;
+    background-color: #ffc200;
+    line-height: 22px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+/*---------------------------------------- crea/modifica eventi bar/utenti---------------------------------------------- */
+
+.fotobarevento {
+    text-align: center;
+}
+
+.nomevento {
+    padding: 5px 0px;
+    margin: auto;
+    width: 300px;
+}
+
+.inputce {
+    background-color: #2a2b2f;
+    border: 0;
+    border-bottom: 2px solid #656360;
+    height: 30px;
+    width: 300px;
+    font-size: 22px;
+    color: #fbf5eb;
+    font-weight: 700;
+    margin-left: 40px;
+}
+
+.inputluogo {
+    width: 150px;
+    background-color: #656360;
+    border: 0;
+    color: white;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+
+.inputpart {
+    width: 50px;
+    background-color: #656360;
+    border: 0;
+    color: white;
+    border-radius: 5px;
+}
+
+.inputdata {
+    width: 160px;
+    background-color: #656360;
+    border: 0;
+    color: white;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+
+.inputora {
+    text-align: center;
+    width: 96px;
+    background-color: #656360;
+    border: 0;
+    color: white;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+
+.bottonecrea {
+    width: 100%;
+    text-align: center;
+}
+
+.inputdesc {
+    width: 300px;
+    height: 200px;
+    background-color: #656360;
+    border: 0;
+    color: white;
+    border-radius: 5px;
+}
+
+.menucat {
+    background-color: #656360;
+    border: 0;
+    border-radius: 5px;
+    color: white;
+}
+
+.botonConfMod {
+    height: 50px;
+    width: 140px;
+    background-color: #3da424;
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border: none;
+}
+
+.txtBotoni {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.eliminaEv {
+    height: 50px;
+    width: 140px;
+    background-color: #ff2e00;
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border: none;
+}
+
+.botoniConfEl {
+    margin: 10px 0px;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+/*---------------------------------------- modifica Profilo ---------------------------------------------- */
+
+.descrizionevento {
+    margin: 10px 0px;
+    margin-left: 25px;
+}
+
+.titolodesc {
+    color: #d37bea;
+    font-weight: 600;
+}
+
+.nomePro {
+    background-color: #656360;
+    border: none;
+    padding: 0px 10px;
+    height: 30px;
+    width: 300px;
+    color: white;
+    border-radius: 5px;
+}
+
+.selec {
+    background-color: #656360;
+    color: white;
+    border-radius: 5px;
+    padding: 1px 5px;
+}
+
+/*---------------------------------------- Preferiti ---------------------------------------------- */
+.preferiti {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.pref {
+    display: flex;
+    flex-direction: column;
+    width: 175px;
+    text-decoration: none;
+    margin: 5px;
+}
+
+.testo {
+    font-family: 'Poppins', 'sans-serif';
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    margin-top: 8px;
+}
+
+/*---------------------------------------- scopri ---------------------------------------------- */
+#categ {
+    background-color: #d37bea;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 4px;
+}
+
+/*---------------------------------------- scopri ---------------------------------------------- */
+
+.innerCont {
+    display: inline-flex;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-end;
+}
+
+.optDesc {
+    text-align: center;
+    width: 250px;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    line-height: 50px;
+    height: 50px;
+}
+
+.opt {
+    width: 96px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+/* pulsante */
+/* From cssbuttons.io by @nikk7007 */
+.switch {
+    --false: #e81b1b;
+    --true: #009068;
+}
+
+input[type='checkbox'] {
+    appearance: none;
+    height: 2rem;
+    width: 3.5rem;
+    background-color: #fff;
+    position: relative;
+    border-radius: 0.2em;
+    cursor: pointer;
+}
+
+input[type='checkbox']::before {
+    content: '';
+    display: block;
+    height: 1.9em;
+    width: 1.9em;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: calc(1.9em / 2 + 0.3em);
+    background-color: var(--false);
+    border-radius: 0.2em;
+    transition: 0.3s ease;
+}
+
+input[type='checkbox']:checked::before {
+    background-color: var(--true);
+    left: calc(100% - (1.9em / 2 + 0.3em));
+}
+
+/*---------------------------------------- FAQ ---------------------------------------------- */
+
+#paragrafi {
+    margin: 10px 10px;
+}
+.domanda {
+    color: #d37bea;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.risposta {
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+/*---------------------------------------- risultati ---------------------------------------------- */
+
+.contenuto {
+    margin-top: 50px;
+    color: white;
+    font-weight: 700;
+    text-align: center;
+}
+
+.titolor {
+    font-size: 50px;
+}
+.testor {
+    font-size: 16px;
+}
+
+.bottoneris {
+    text-align: center;
+    border: 0;
+}
+
+.bottoneris > a > button {
+    border: 0;
+    color: white;
+    font-weight: 600;
+    width: 110px;
+    height: 45px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#btnavanti {
+    background-color: #3da424;
+}
+
+#btnannulla {
+    background-color: #ffc200;
+}
+
+#btnriprova {
+    background-color: #ff2e00;
+}
