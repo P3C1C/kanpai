@@ -11,27 +11,37 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
+echo "DIO GRANDISSIMO";
+
+$input = json_decode(file_get_contents('php://input'), true);
+
+$nome = isset($input['nome']) ?  $input['nome'] : '';
+$email = isset($input['emailbar']) ?  $input['emailbar'] : '';
+$password = isset($input['password']) ?  $input['password'] : '';
+$conpas = isset($input['conpas']) ?  $input['conpas'] : '';
+
+
+
 $doppione = false;
 $sql = "SELECT email FROM bar";
 $result = $conn->query($sql);
 
-while($row = $result->fetch_assoc()) 
-{
-  if($row["email"] == $_POST["email"])
-  {
+while ($row = $result->fetch_assoc()) {
+  if ($row["email"] == $email) {
     $doppione = true;
   }
 }
 
-if($doppione == true){
-  header('Location: error.php');
+if($doppione == true && $password == $conpas) {
+  echo "Email già presente";
 }
 else{
-$sql = "INSERT INTO `bar` (`idBar`, `nome`, `email`, `password`, `nCivico`, `descrizione`, `idIndirizzo`) 
-        VALUES (NULL, '$_POST[nome]', '$_POST[email]', '$_POST[password]', '$_POST[civico]', '', '3');";
+  $sql = "INSERT INTO `bar` (`nome`, `email`, `password`)
+          VALUES ('$nome', '$email', '$password');";
+
 
   if ($conn->query($sql) === TRUE) {
-    header('Location: successo.php');
+    echo "successo";
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }

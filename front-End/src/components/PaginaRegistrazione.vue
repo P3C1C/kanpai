@@ -16,64 +16,72 @@
             </div>
             <br />
 
-            <form v-if="u" action="#" method="post">
+            <div v-if="u">
                 <div>
-                    <input type="text" name="nome" placeholder="Nome" class="inte" />
+                    <input type="text" v-model="nome" placeholder="Nome" class="inte" />
                 </div>
                 <div>
-                    <input type="text" name="cognome" id="cognome" placeholder="Cognome" class="inte" />
+                    <input type="text" v-model="cognome" placeholder="Cognome" class="inte" />
                 </div>
                 <div>
-                    <input type="text" name="email" id="email" placeholder="E-mail" class="inte" />
+                    <input type="text" v-model="email" placeholder="E-mail" class="inte" />
                 </div>
                 <div>
-                    <input type="password" name="password" id="password" placeholder="Password" class="inte" />
+                    <input type="password" v-model="password" placeholder="Password" class="inte" />
                 </div>
                 <div>
-                    <input type="password" name="conpas" id="conpas" placeholder="Conferma Password" class="inte" />
+                    <input type="password" v-model="conpas" placeholder="Conferma Password" class="inte" />
                 </div>
                 <div>
-                    <router-link to="pagina-home" tag="button" class="btn">Conferma</router-link>
+                    <button @click="registrati()" class="btn">Conferma</button>
                 </div>
-            </form>
+            </div>
 
-            <form v-if="b" action="#" method="post">
+            <div v-if="b">
                 <div>
-                    <input type="text" name="nome" placeholder="Nome Bar" class="inte" />
+                    <input type="text" v-model="nome" placeholder="Nome Bar" class="inte" />
                 </div>
                 <div>
-                    <input type="text" name="citta" id="citta" placeholder="Città" class="inte" />
+                    <input type="text" placeholder="Città" class="inte" />
                 </div>
                 <div>
-                    <input type="text" name="indirizzo" id="indirizzo" placeholder="indirizzo" class="inte" />
+                    <input type="text" placeholder="indirizzo" class="inte" />
                 </div>
                 <div>
-                    <input type="text" name="civico" id="civico" placeholder="N. civico" class="inte" />
+                    <input type="text" placeholder="N. civico" class="inte" />
                 </div>
                 <div>
-                    <input type="text" name="email" id="email" placeholder="E-mail" class="inte" />
+                    <input type="text" v-model="email" placeholder="E-mail" class="inte" />
                 </div>
                 <div>
-                    <input type="password" name="password" id="password" placeholder="Password" class="inte" />
+                    <input type="password" v-model="password" placeholder="Password" class="inte" />
                 </div>
                 <div>
-                    <input type="password" name="conpas" id="conpas" placeholder="Conferma Password" class="inte" />
+                    <input type="password" v-model="conpas" placeholder="Conferma Password" class="inte" />
                 </div>
                 <div>
-                    <router-link to="pagina-home" tag="button" class="btn">Conferma</router-link>
+                    <button @click="registratibar()" class="btn">Conferma</button>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
     name: 'PaginaRegistrazione',
+
     data() {
         return {
             u: true,
             b: false,
+            nome: '',
+            cognome: '',
+            email: '',
+            password: '',
+            conpas: '',
         };
     },
     methods: {
@@ -84,6 +92,48 @@ export default {
         switchb() {
             this.u = false;
             this.b = true;
+        },
+        async registrati() {
+            let questo = this;
+            await axios
+                .post('http://localhost/kanpai/Back-End/registrati.php', {
+                    nome: this.nome,
+                    cognome: this.cognome,
+                    email: this.email,
+                    password: this.password,
+                    conpas: this.conpas,
+                })
+                .then(function (response) {
+                    if (response.data == 'successo') {
+                        questo.$router.push('/pagina-successo');
+                    } else {
+                        questo.$router.push('/pagina-errore');
+                    }
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        },
+
+        async registratibar() {
+            let questo = this;
+            await axios
+                .post('http://localhost/kanpai/Back-End/registratiBar.php', {
+                    nome: this.nome,
+                    email: this.email,
+                    password: this.password,
+                    conpas: this.conpas,
+                })
+                .then(function (response) {
+                    if (response.data == 'successo') {
+                        questo.$router.push('/pagina-successo');
+                    } else {
+                        questo.$router.push('/pagina-errore');
+                    }
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
         },
     },
 };

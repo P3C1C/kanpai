@@ -23,6 +23,8 @@ import CreatiDaMe from "@/components/CreatiDaMe.vue";
 import PaginaImpostazioni from "@/components/PaginaImpostazioni.vue";
 import FAQ from "@/components/FAQ.vue";
 import PaginaPrivacy from "@/components/PaginaPrivacy.vue";
+import PaginaSuccesso from "@/components/PaginaSuccesso.vue";
+import PaginaErrore from "@/components/PaginaErrore.vue";
 
 Vue.use(VueRouter);
 
@@ -131,6 +133,16 @@ const routes = [
         path: "/pagina-privacy",
         name: "Pagina Privacy",
         component: PaginaPrivacy,
+    },
+    {
+        path: "/pagina-successo",
+        name: "Pagina Successo",
+        component: PaginaSuccesso,
+    },
+    {
+        path: "/pagina-errore",
+        name: "Pagina Errore",
+        component: PaginaErrore,
     },
 ];
 
