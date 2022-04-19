@@ -1,6 +1,8 @@
 <template>
     <div>
-        <img src="../assets/left arrow.png" alt="freccia" class="freccia" />
+        <a href="javascript:history.go(-1)" onMouseOver="self.status=document.referrer;return true">
+            <img src="../assets/left arrow.png" alt="freccia" class="freccia" />
+        </a>
         <div class="titoli" style="display: inline-block">Crea evento</div>
 
         <div class="fotobarevento">
@@ -8,7 +10,7 @@
         </div>
 
         <div class="nomevento">
-            <input type="text" class="inputce" placeholder="Nome evento" />
+            <input type="text" class="inputce" v-model="nome" placeholder="Nome evento" />
         </div>
 
         <div class="informazioni">
@@ -20,7 +22,7 @@
             </div>
             <div class="innContenitore eqTitle">
                 N° Part.
-                <div class="eqInner"><i class="bi bi-person-fill"></i><input type="number" class="inputpart" /></div>
+                <div class="eqInner"><i class="bi bi-person-fill"></i><input v-model="np" type="number" class="inputpart" /></div>
             </div>
         </div>
 
@@ -28,13 +30,13 @@
             <div class="innContenitore eqTitle">
                 Data
                 <div class="eqInner">
-                    <input type="date" class="inputdata" />
+                    <input v-model="data" type="date" class="inputdata" />
                 </div>
             </div>
             <div class="innContenitore eqTitle">
                 Orario
                 <div class="eqInner">
-                    <input type="time" class="inputora" />
+                    <input v-model="time" type="time" class="inputora" />
                 </div>
             </div>
         </div>
@@ -43,7 +45,7 @@
             <div class="innContenitore eqTitle">
                 Categoria
                 <div class="eqInner">
-                    <select name="categorie" class="menucat">
+                    <select v-model="categoria" name="categorie" class="menucat">
                         <option value="musica">Musica</option>
                         <option value="film_serietv">Film/Serie tv</option>
                         <option value="videogiochi">Videogiochi</option>
@@ -61,44 +63,54 @@
 
         <div class="bioDesc">
             <div class="descrEvBar">Descrizione</div>
-            <textarea class="inputdesc" cols="30" rows="10" maxlength="50" placeholder="Inserisci delle informazioni aggiuntive"></textarea>
+            <textarea v-model="descrizione" class="inputdesc" cols="30" rows="10" maxlength="50" placeholder="Inserisci delle informazioni aggiuntive"></textarea>
         </div>
 
         <div class="bottonecrea">
-            <button class="btn"><i class="bi bi-plus-circle-fill"></i> Crea</button>
-        </div>
-
-        <div class="menu">
-            <router-link to="pagina-home" tag="a" class="link">
-                <img src="../assets/bx_bxs-home.png" alt="casa" />
-                Home
-            </router-link>
-            <router-link to="pagina-preferiti" tag="a" class="link">
-                <img src="../assets/bx_bxs-heart.png" alt="cuore" />
-                Preferiti
-            </router-link>
-            <router-link to="#" tag="a" class="link">
-                <img src="../assets/crea.png" alt="zircles" />
-            </router-link>
-            <router-link to="pagina-scopri" tag="a" class="link">
-                <img src="../assets/bx_bxs-drink.png" alt="bicchiere" />
-                Scopri
-            </router-link>
-            <router-link to="#" tag="a" class="link">
-                <img src="../assets/bx_bxs-user.png" alt="utente" />
-                Profilo
-            </router-link>
+            <button @click="creaEvento()" class="btn"> Crea</button>
         </div>
     </div>
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
     name: 'CreaEventoUtente',
     data() {
-        return {};
+        return {
+            nome: '',
+            descrizione: '',
+            categoria: '',
+            np: 0,
+            id: '',
+            data: '',
+            time: '',
+        };
     },
-    methods: {},
+    mounted() {
+        this.id = JSON.parse(localStorage.user).idUtente;
+    },
+    methods: {
+        async creaEvento() {
+            await axios.post('http://localhost/kanpai/back-End/CreaEventoUtente.php', {
+                nome: this.nome,
+                descrizione: this.descrizione,
+                categoria: this.categoria,
+                np: this.np,
+                id: this.id,
+                data: this.data,
+                time: this.time,
+            })
+            .then(response => {
+                this.$router.push('/pagina-successo');
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        },
+    },
 };
 </script>
 

@@ -1,6 +1,8 @@
 <template>
     <div>
-        <img src="../assets/left arrow.png" alt="freccia" class="freccia" />
+        <a href="javascript:history.go(-1)" onMouseOver="self.status=document.referrer;return true">
+            <img src="../assets/left arrow.png" alt="freccia" class="freccia" />
+        </a>
         <div class="titoli" style="display: inline-block">Crea evento</div>
 
         <div class="fotobarevento">
@@ -8,64 +10,71 @@
         </div>
 
         <div class="nomevento">
-            <input type="text" class="inputce" placeholder="Nome evento" />
+            <input v-model="nome" type="text" class="inputce" placeholder="Nome evento" />
         </div>
 
         <div class="informazioni">
             <div class="innContenitore eqTitle">
                 Data
                 <div class="eqInner">
-                    <input type="date" class="inputdata" />
+                    <input v-model="data" type="date" class="inputdata" />
                 </div>
             </div>
             <div class="innContenitore eqTitle">
                 Orario
                 <div class="eqInner">
-                    <input type="time" class="inputora" />
+                    <input v-model="time" type="time" class="inputora" />
                 </div>
             </div>
         </div>
 
         <div class="bioDesc">
             <div class="descrEvBar">Descrizione</div>
-            <textarea class="inputdesc" cols="30" rows="10" maxlength="50" placeholder="Inserisci delle informazioni aggiuntive"></textarea>
+            <textarea v-model="descrizione" class="inputdesc" cols="30" rows="10" maxlength="50" placeholder="Inserisci delle informazioni aggiuntive"></textarea>
         </div>
 
         <div class="bottonecrea">
-            <button class="btn"><i class="bi bi-plus-circle-fill"></i> Crea</button>
-        </div>
-
-        <div class="menu">
-            <router-link to="pagina-home" tag="a" class="link">
-                <img src="../assets/bx_bxs-home.png" alt="casa" />
-                Home
-            </router-link>
-            <router-link to="pagina-preferiti" tag="a" class="link">
-                <img src="../assets/bx_bxs-heart.png" alt="cuore" />
-                Preferiti
-            </router-link>
-            <router-link to="#" tag="a" class="link">
-                <img src="../assets/crea.png" alt="zircles" />
-            </router-link>
-            <router-link to="pagina-scopri" tag="a" class="link">
-                <img src="../assets/bx_bxs-drink.png" alt="bicchiere" />
-                Scopri
-            </router-link>
-            <router-link to="#" tag="a" class="link">
-                <img src="../assets/bx_bxs-user.png" alt="utente" />
-                Profilo
-            </router-link>
+            <button @click="creaEvento()" class="btn">Crea</button>
         </div>
     </div>
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
     name: 'CreaEventoBar',
     data() {
-        return {};
+        return {
+            nome: '',
+            data: '',
+            time: '',
+            descrizione: '',
+            id: '',
+        };
     },
-    methods: {},
+    mounted() {
+        this.id = JSON.parse(localStorage.user).idBar;
+    },
+    methods: {
+        async creaEvento() {
+            let questo = this;
+            await axios.post('http://localhost/kanpai/back-End/CreaEventoBar.php', {
+                nome: this.nome,
+                descrizione: this.descrizione,
+                id: this.id,
+                data: this.data,
+                time: this.time,
+            })
+            .then(function (response) {
+                questo.$router.push('/pagina-successo');
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        },
+    },
 };
 </script>
 

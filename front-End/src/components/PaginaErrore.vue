@@ -18,8 +18,8 @@
         <br />
 
         <div class="bottoneris">
-            <router-link to="/" tag="a">
-                <button id="btnriprova"><i class="bi bi-arrow-clockwise"></i> Riprova</button>
+            <router-link to="/" tag="button" id="btnriprova">
+                <i class="bi bi-arrow-clockwise"></i> Riprova
             </router-link>
         </div>
     </div>

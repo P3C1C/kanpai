@@ -1,27 +1,27 @@
 <template>
     <div>
         <!-- --------------------- Bar da cui parte l'evento e Immagine copertina ------------------------->
-        <div class="titoli">Evento di bar pino</div>
+        <div class="titoli">Evento di {{ bar.nome }}</div>
         <div id="picBar"></div>
         <!-- ---------------------- Titolo - Data e Ora ----------------------------->
 
-        <div class="titoloEventi">Degustazione di Birre</div>
+        <div class="titoloEventi">{{ evento.nome }}</div>
 
         <div class="informazioni">
             <div class="innContenitore eqTitle">
                 Data
-                <div class="eqInner">16 / 08</div>
+                <div class="eqInner">{{ evento.data }}</div>
             </div>
             <div class="innContenitore eqTitle">
                 Orario
-                <div class="eqInner">18:30</div>
+                <div class="eqInner">{{ evento.ora }}</div>
             </div>
         </div>
         <!-- ----------------------- Descrizione ---------------------------------------->
 
         <div class="bioDesc">
             <div class="descrEvBar">Descrizione</div>
-            Degustazione di birre artigianali dalla Lombardia e dal Piemonte. La prima birra è gratis
+            {{ evento.descrizione }}
         </div>
 
         <!-- ----------------------- Visita ---------------------------------------->
@@ -42,28 +42,59 @@
                 <img src="../assets/bx_bxs-heart.png" alt="cuore" />
                 Preferiti
             </router-link>
-            <router-link to="crea-evento-utente" tag="a" class="link">
+            <a @click="crea()" class="link">
                 <img src="../assets/bx_bx-plus-circle.png" alt="zircles" />
-            </router-link>
+            </a>
             <router-link to="pagina-scopri" tag="a" class="link">
                 <img src="../assets/bx_bxs-drink.png" alt="bicchiere" />
                 Scopri
             </router-link>
-            <router-link to="#" tag="a" class="link">
+            <a @click="utente()" class="link">
                 <img src="../assets/bx_bxs-user.png" alt="utente" />
                 Profilo
-            </router-link>
+            </a>
         </div>
     </div>
 </template>
 
 <script>
+import axios from 'axios';
 export default {
     name: 'EventoBar',
     data() {
-        return {};
+        return {
+            evento: [],
+            bar: [],
+        };
     },
-    methods: {},
+    async mounted() {
+        this.evento = JSON.parse(localStorage.evento);
+        //console.log(this.evento);
+        await axios
+            .post('http://localhost/kanpai/back-End/NomeBar.php', {
+                id: this.evento.idBar,
+            })
+            .then((response) => {
+                localStorage.setItem('bar', JSON.stringify(response.data));
+                this.bar = JSON.parse(localStorage.bar);
+                //console.log(this.bar);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    },
+    methods: {
+        utente() {
+            if (localStorage.getItem('tipo') == 'u') {
+                this.$router.push('/area-personale-utente');
+            } else this.$router.push('/area-personale-bar');
+        },
+        crea() {
+            if (localStorage.getItem('tipo') == 'u') {
+                this.$router.push('/crea-evento-utente');
+            } else this.$router.push('/crea-evento-bar');
+        },
+    },
 };
 </script>
 

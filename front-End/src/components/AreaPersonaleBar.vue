@@ -4,7 +4,7 @@
         <div class="imgProfilo">
             <img src="../assets/imgUser.png" alt="" />
         </div>
-        <div class="titoloEventi">Bar Pistacchio</div>
+        <div class="titoloEventi">{{ nome }}</div>
         <div id="modProf" class="aPerTxt">
             <router-link tag="a" to="modifica-profilo-bar"> <img src="../assets/modProf.png" class="ico" alt="" />Modifica Profilo </router-link>
         </div>
@@ -47,9 +47,9 @@
                 <img src="../assets/bx_bxs-heart.png" alt="cuore" />
                 Preferiti
             </router-link>
-            <router-link to="crea-evento-utente" tag="a" class="link">
+            <a @click="crea()" class="link">
                 <img src="../assets/bx_bx-plus-circle.png" alt="zircles" />
-            </router-link>
+            </a>
             <router-link to="pagina-scopri" tag="a" class="link">
                 <img src="../assets/bx_bxs-drink.png" alt="bicchiere" />
                 Scopri
@@ -66,9 +66,22 @@
 export default {
     name: 'AreaPersonaleBar',
     data() {
-        return {};
+        return {
+            nome: '',
+            cognome: '',
+        };
     },
-    methods: {},
+    mounted() {
+        this.nome = JSON.parse(localStorage.user).nome;
+        this.cognome = JSON.parse(localStorage.user).cognome;
+    },
+    methods: {
+        crea() {
+            if (localStorage.getItem('tipo') == 'u') {
+                this.$router.push('/crea-evento-utente');
+            } else this.$router.push('/crea-evento-bar');
+        },
+    },
 };
 </script>
 

@@ -12,7 +12,14 @@
         <div class="descrizionevento">
             <span class="titolodesc">Nome</span>
             <div>
-                <input type="text" class="nomePro" />
+                <input type="text" v-model="nome" class="nomePro" />
+            </div>
+        </div>
+
+        <div class="descrizionevento">
+            <span class="titolodesc">cognome</span>
+            <div>
+                <input type="text" v-model="cognome" class="nomePro" />
             </div>
         </div>
 
@@ -26,10 +33,10 @@
         <div class="descrizionevento">
             <span class="titolodesc">Sesso</span>
             <div>
-                <select class="selec">
-                    <option value="">Indeterminato</option>
-                    <option value="">F</option>
-                    <option value="">M</option>
+                <select class="selec" v-model="sesso">
+                    <option value="Indeterminato">Indeterminato</option>
+                    <option value="femmina">F</option>
+                    <option value="maschio">M</option>
                 </select>
             </div>
         </div>
@@ -37,23 +44,54 @@
         <div class="descrizionevento">
             <span class="titolodesc">Biografia</span>
             <div>
-                <textarea class="inputdesc" maxlength="100" placeholder="Racconta qualcosa su di te"></textarea>
+                <textarea class="inputdesc" v-model="descrizione" maxlength="100" placeholder="Racconta qualcosa su di te"></textarea>
             </div>
         </div>
 
         <div class="bottonecrea">
-            <button class="btn"><i class="bi bi-plus-circle-fill"></i> Conferma</button>
+            <button @click="modifica()" class="btn"><i class="bi bi-plus-circle-fill"></i> Conferma</button>
         </div>
     </div>
 </template>
 
 <script>
+import axios from 'axios';
 export default {
     name: 'ModificaProfiloUtente',
     data() {
-        return {};
+        return {
+            nome: '',
+            cognome: '',
+            sesso: '',
+            descrizione: '',
+            id: '',
+        };
     },
-    methods: {},
+    mounted() {
+        this.id = JSON.parse(localStorage.user).idUtente;
+    },
+    methods: {
+        async modifica() {
+            let questo = this;
+            await axios
+                .post('http://localhost/kanpai/back-End/ModificaProfiloUtente.php', {
+                    nome: this.nome,
+                    cognome: this.cognome,
+                    sesso: this.sesso,
+                    descrizione: this.descrizione,
+                    id: this.id,
+                })
+                .then(function (response) {
+                    console.log(response.data);
+                    localStorage.tipo = response.data[0].tipo;
+                    localStorage.user = response.data[0].user;
+                    questo.$router.push('/pagina-successo');
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        },
+    },
 };
 </script>
 

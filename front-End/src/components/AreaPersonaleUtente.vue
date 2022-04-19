@@ -4,7 +4,7 @@
         <div class="imgProfilo">
             <img src="../assets/imgUser.png" alt="" />
         </div>
-        <div class="titoloEventi">Emily Sun</div>
+        <div class="titoloEventi">{{ nome }} {{ cognome }}</div>
         <div id="modProf" class="aPerTxt">
             <router-link tag="a" to="modifica-profilo-utente"> <img src="../assets/modProf.png" class="ico" alt="" />Modifica Profilo </router-link>
         </div>
@@ -21,19 +21,21 @@
             <router-link tag="a" to="pagina-privacy"> <img src="../assets/priv.png" class="ico" alt="" />privacy </router-link>
         </div>
         <div id="logOut" class="aPerTxt">
-            <router-link tag="a" to=""> <img src="../assets/logOut.png" class="ico" alt="" />Log Out </router-link>
+            <a @click="out(true)"> <img src="../assets/logOut.png" class="ico" alt="" />Log Out </a>
         </div>
 
         <!-- ----------------------- logOut ---------------------------------------->
-        <div id="sfondoLogOut"></div>
-        <div id="contLogOut">
-            <div id="inLogOut">Sicuro di voler uscire?</div>
-            <div id="confAnn">
-                <div class="confAnn" id="conferma">
-                    <a href="../index.html" style="color: white"> Conferma </a>
-                </div>
-                <div class="confAnn" id="annulla" onclick="notShow()">
-                    <a style="color: white"> Annulla </a>
+        <div v-if="logout">
+            <div id="sfondoLogOut"></div>
+            <div id="contLogOut">
+                <div id="inLogOut">Sicuro di voler uscire?</div>
+                <div id="confAnn">
+                    <div class="confAnn" id="conferma">
+                        <a @click="esci()" style="color: white"> Conferma </a>
+                    </div>
+                    <div class="confAnn" id="annulla" @click="out(false)">
+                        <a> Annulla </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -47,9 +49,9 @@
                 <img src="../assets/bx_bxs-heart.png" alt="cuore" />
                 Preferiti
             </router-link>
-            <router-link to="crea-evento-utente" tag="a" class="link">
+            <a @click="crea()" class="link">
                 <img src="../assets/bx_bx-plus-circle.png" alt="zircles" />
-            </router-link>
+            </a>
             <router-link to="pagina-scopri" tag="a" class="link">
                 <img src="../assets/bx_bxs-drink.png" alt="bicchiere" />
                 Scopri
@@ -66,9 +68,29 @@
 export default {
     name: 'AreaPersonaleUtente',
     data() {
-        return {};
+        return {
+            nome: '',
+            cognome: '',
+            logout: false,
+        };
     },
-    methods: {},
+    mounted() {
+        this.nome = JSON.parse(localStorage.user).nome;
+        this.cognome = JSON.parse(localStorage.user).cognome;
+    },
+    methods: {
+        crea() {
+            if (localStorage.getItem('tipo') == 'u') {
+                this.$router.push('/crea-evento-utente');
+            } else this.$router.push('/crea-evento-bar');
+        },
+        out(v) {
+            this.logout = v;
+        },
+        esci() {
+            this.$router.push('/');
+        }
+    },
 };
 </script>
 

@@ -1,6 +1,7 @@
 import Vue from "vue";
 import App from "./App.vue";
 import VueRouter from "vue-router";
+import VueSession from 'vue-session';
 
 import PrimaPagina from "@/components/PrimaPagina.vue";
 import PaginaRegistrazione from "@/components/PaginaRegistrazione.vue";
@@ -26,6 +27,11 @@ import PaginaPrivacy from "@/components/PaginaPrivacy.vue";
 import PaginaSuccesso from "@/components/PaginaSuccesso.vue";
 import PaginaErrore from "@/components/PaginaErrore.vue";
 
+var options = {
+    persist: true
+}
+
+Vue.use(VueSession, options)
 Vue.use(VueRouter);
 
 const routes = [
@@ -45,7 +51,7 @@ const routes = [
         component: PaginaAccesso,
     },
     {
-        path: "/pagina-home",
+        path: "/pagina-home/",
         name: "Pagina Home",
         component: PaginaHome,
     },

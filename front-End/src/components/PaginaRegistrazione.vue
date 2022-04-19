@@ -33,7 +33,7 @@
                     <input type="password" v-model="conpas" placeholder="Conferma Password" class="inte" />
                 </div>
                 <div>
-                    <button @click="registrati()" class="btn">Conferma</button>
+                    <button @click="registrati('u')" class="btn">Conferma</button>
                 </div>
             </div>
 
@@ -60,7 +60,7 @@
                     <input type="password" v-model="conpas" placeholder="Conferma Password" class="inte" />
                 </div>
                 <div>
-                    <button @click="registratibar()" class="btn">Conferma</button>
+                    <button @click="registrati('b')" class="btn">Conferma</button>
                 </div>
             </div>
         </div>
@@ -93,42 +93,25 @@ export default {
             this.u = false;
             this.b = true;
         },
-        async registrati() {
+        async registrati(tip) {
             let questo = this;
             await axios
-                .post('http://localhost/kanpai/Back-End/registrati.php', {
+                .post('http://localhost/kanpai/back-End/registrati.php', {
                     nome: this.nome,
                     cognome: this.cognome,
                     email: this.email,
                     password: this.password,
                     conpas: this.conpas,
+                    tipo: tip,
                 })
                 .then(function (response) {
-                    if (response.data == 'successo') {
-                        questo.$router.push('/pagina-successo');
-                    } else {
+                    if (response.data == 'errore') {
+                        console.log(response.data);
                         questo.$router.push('/pagina-errore');
-                    }
-                })
-                .catch(function (error) {
-                    console.log(error);
-                });
-        },
-
-        async registratibar() {
-            let questo = this;
-            await axios
-                .post('http://localhost/kanpai/Back-End/registratiBar.php', {
-                    nome: this.nome,
-                    email: this.email,
-                    password: this.password,
-                    conpas: this.conpas,
-                })
-                .then(function (response) {
-                    if (response.data == 'successo') {
-                        questo.$router.push('/pagina-successo');
                     } else {
-                        questo.$router.push('/pagina-errore');
+                        localStorage.setItem('tipo', response.data[0].tipo);
+                        localStorage.setItem('user', response.data[0].user);
+                        questo.$router.push('/pagina-successo');
                     }
                 })
                 .catch(function (error) {

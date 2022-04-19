@@ -9,17 +9,15 @@
 
         <div class="accesso">
             <div class="titolo">ACCEDI</div>
-            <form action="#" method="post">
+            <form @submit.prevent="accedi">
                 <div>
-                    <input type="text" name="email" placeholder="E-mail" class="inte" />
+                    <input type="text" v-model="email" placeholder="E-mail" class="inte" />
                 </div>
                 <div>
-                    <input type="password" name="password" placeholder="Password" class="inte" />
+                    <input type="password" v-model="password" placeholder="Password" class="inte" />
                 </div>
                 <div>
-                    <a href="home.html">
-                        <router-link to="pagina-home" tag="button" class="btn">Accedi</router-link>
-                    </a>
+                    <button class="btn">Accedi</button>
                 </div>
             </form>
         </div>
@@ -27,12 +25,39 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
     name: 'PaginaAccesso',
     data() {
-        return {};
+        return {
+            email: '',
+            password: '',
+        };
     },
-    methods: {},
+    mounted() {},
+    methods: {
+        async accedi() {
+            let questo = this;
+            await axios
+                .post('http://localhost/kanpai/back-End/accedi.php', {
+                    email: this.email,
+                    password: this.password,
+                })
+                .then(function (response) {
+                    if (response.data == 'errore') {
+                        questo.$router.push('/pagina-errore');
+                    } else {
+                        localStorage.setItem('tipo', response.data[0].tipo);
+                        localStorage.setItem('user', response.data[0].user);
+                        questo.$router.push('/pagina-home');
+                    }
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        },
+    },
 };
 </script>
 

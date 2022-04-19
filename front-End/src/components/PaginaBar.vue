@@ -10,37 +10,94 @@
 
         <div class="info">
             <div>
-                <span class="titoli">Bar Pistacchio</span> <br />
+                <span class="titoli">{{ bar.nome }}</span> <br />
                 <span class="sottotitolo">Via San Crispino, 12</span>
             </div>
             <div class="cuorebar">
-                <img src="../assets/cuore.png" />
+                <img v-if="!bottone" @click="segui(true)" src="../assets/bx_bxs-heart.png" />
+                <img v-else @click="segui(false)" src="../assets/cuore.png" />
             </div>
         </div>
-        <div class="descbar">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dictum sem at felis finibus, vitae pretium lorem accumsan. Quisque in consequat metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam id tellus eu elit ultrices fringilla. Aenean eu ultrices nulla. Ut pulvinar, nunc a rutrum varius, massa enim commodo massa, sit amet aliquam lectus dui sed nibh.</div>
+        <div class="descbar">{{ bar.descrizione }}</div>
 
         <div class="titoli" style="font-size: 24px">Eventi</div>
 
         <div class="elementi">
-            <router-link to="evento-bar" tag="a" class="linkh">
+            <a v-for="(item, index) in eventi" @click="eventb(item)" class="linkh" :key="index">
                 <img src="../assets/es.png" alt="casa" />
                 <div class="tes">
-                    <div class="t1">Serata Tequila</div>
-                    <div class="t2">03/04/2022</div>
-                    <div class="t3">21.30</div>
+                    <div class="t1">{{ JSON.parse(item).nome }}</div>
+                    <div class="t2">Bar collo</div>
+                    <div class="t3">
+                        <img src="../assets/cuore.png" alt="cuoricino" style="width: 16px; height: 16px" />
+                        250
+                    </div>
                 </div>
-            </router-link>
+            </a>
         </div>
     </div>
 </template>
 
 <script>
+import axios from 'axios';
 export default {
     name: 'PaginaBar',
     data() {
-        return {};
+        return {
+            bar: [],
+            eventi: [],
+            bottone: false,
+        };
     },
-    methods: {},
+    async mounted() {
+        this.bar = JSON.parse(localStorage.bar);
+        await axios
+            .post('http://localhost/kanpai/back-End/EventiBar.php', {
+                id: this.bar.idBar,
+            })
+            .then((response) => {
+                this.eventi = response.data;
+                //console.log(this.eventi);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        await axios
+            .post('http://localhost/kanpai/back-End/VerificaSegui.php', {
+                idb: this.bar.idBar,
+                idu: JSON.parse(localStorage.user).idUtente,
+            })
+            .then((response) => {
+                if (response.data == 'y') {
+                    this.bottone = true;
+                } else {
+                    this.bottone = false;
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    },
+    methods: {
+        eventb(i) {
+            localStorage.setItem('evento', i);
+            this.$router.push('/evento-bar');
+        },
+        async segui(i) {
+            await axios
+                .post('http://localhost/kanpai/back-End/Segui.php', {
+                    idb: this.bar.idBar,
+                    idu: JSON.parse(localStorage.user).idUtente,
+                })
+                .then((response) => {
+                    console.log(response.data);
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+            this.bottone = i;
+        },
+    },
 };
 </script>
 

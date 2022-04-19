@@ -1,36 +1,44 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "kanpai";
+include 'connection.php';
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+$conn = connection();
 
-$sql = "SELECT * FROM utenti where email='" . $_POST["email"] . "' and password='" . $_POST["password"] . "'";
+$input = json_decode(file_get_contents('php://input'), true);
+
+$email = isset($input['email']) ?  $input['email'] : '';
+$password = isset($input['password']) ?  $input['password'] : '';
+
+$sql = "SELECT * FROM utenti where email='" . $email . "' and password='" . $password . "'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
     while ($row = $result->fetch_assoc()) {
-        header('Location: ../front-End/file/home.php');
+        $user = [
+            [
+                "tipo" => "u",
+                "user" => json_encode($row),
+            ],
+        ];
+        echo json_encode($user);
     }
 } else {
-    $sql = "SELECT * FROM bar where email='" . $_POST["email"] . "' and password='" . $_POST["password"] . "'";
+    $sql = "SELECT * FROM bar where email='" . $email . "' and password='" . $password . "'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
         // output data of each row
         while ($row = $result->fetch_assoc()) {
-            header('Location: ../front-End/file/home.php');
+            $user = [
+                [
+                    "tipo" => "b",
+                    "user" => json_encode($row),
+                ],
+            ];
+            echo json_encode($user);
         }
     } else {
-        header('Location: error.php');
+        echo "errore";
     }
 }
-
 $conn->close();

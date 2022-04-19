@@ -18,8 +18,8 @@
         <br />
 
         <div class="bottoneris">
-            <router-link to="pagina-home" tag="a">
-                <button id="btnavanti"><i class="bi bi-check-circle-fill"></i> Avanti</button>
+            <router-link to="pagina-home" tag="button" id="btnavanti">
+                <i class="bi bi-check-circle-fill"></i> Avanti
             </router-link>
         </div>
     </div>

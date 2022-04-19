@@ -12,7 +12,7 @@
         <div class="descrizionevento">
             <span class="titolodesc">Nome</span>
             <div>
-                <input type="text" class="nomePro" />
+                <input type="text" v-model="nome" class="nomePro" />
             </div>
         </div>
 
@@ -26,23 +26,50 @@
         <div class="descrizionevento">
             <span class="titolodesc">Biografia</span>
             <div>
-                <textarea class="inputdesc" maxlength="100" placeholder="Racconta qualcosa su di te"></textarea>
+                <textarea v-model="descrizione" class="inputdesc" maxlength="100" placeholder="Racconta qualcosa su di te"></textarea>
             </div>
         </div>
 
         <div class="bottonecrea">
-            <button class="btn"><i class="bi bi-plus-circle-fill"></i> Conferma</button>
+            <button @click="modifica()" class="btn"><i class="bi bi-plus-circle-fill"></i> Conferma</button>
         </div>
     </div>
 </template>
 
 <script>
+import axios from 'axios';
 export default {
     name: 'ModificaProfiloBar',
     data() {
-        return {};
+        return {
+            nome: '',
+            descrizione: '',
+            id: '',
+        };
     },
-    methods: {},
+    mounted() {
+        this.id = JSON.parse(localStorage.user).idBar;
+    },
+    methods: {
+        async modifica() {
+            let questo = this;
+            await axios
+                .post('http://localhost/kanpai/back-End/ModificaProfiloBar.php', {
+                    nome: this.nome,
+                    descrizione: this.descrizione,
+                    id: this.id,
+                })
+                .then(function (response) {
+                    console.log(response.data);
+                    localStorage.tipo = response.data[0].tipo;
+                    localStorage.user = response.data[0].user;
+                    questo.$router.push('/pagina-successo');
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        },
+    },
 };
 </script>
 

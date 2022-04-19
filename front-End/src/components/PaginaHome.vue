@@ -10,28 +10,17 @@
         <div class="titoli">Eventi a cui partecipi</div>
 
         <div class="elementi">
-            <router-link to="evento-utente" tag="a" class="linkh">
+            <a v-for="(item, index) in eventi" @click="event(item)" class="linkh" :key="index">
                 <img src="../assets/es.png" alt="casa" />
                 <div class="tes">
-                    <div class="t1">Gara Shottini</div>
+                    <div class="t1">{{ JSON.parse(item).nome }}</div>
                     <div class="t2">Via Roma, 13</div>
                     <div class="t3">
                         <img src="../assets/bx_bxs-heart.png" alt="cuoricino" style="width: 16px; height: 16px" />
                         250
                     </div>
                 </div>
-            </router-link>
-            <router-link to="evento-bar" tag="a" class="linkh">
-                <img src="../assets/es.png" alt="casa" />
-                <div class="tes">
-                    <div class="t1">Serata jaz</div>
-                    <div class="t2">Via Roma, 13</div>
-                    <div class="t3">
-                        <img src="../assets/bx_bxs-heart.png" alt="cuoricino" style="width: 16px; height: 16px" />
-                        250
-                    </div>
-                </div>
-            </router-link>
+            </a>
         </div>
 
         <div class="menu">
@@ -43,28 +32,64 @@
                 <img src="../assets/bx_bxs-heart.png" alt="cuore" />
                 Preferiti
             </router-link>
-            <router-link to="crea-evento-utente" tag="a" class="link">
+            <a @click="crea()" class="link">
                 <img src="../assets/bx_bx-plus-circle.png" alt="zircles" />
-            </router-link>
+            </a>
             <router-link to="pagina-scopri" tag="a" class="link">
                 <img src="../assets/bx_bxs-drink.png" alt="bicchiere" />
                 Scopri
             </router-link>
-            <router-link to="#" tag="a" class="link">
+            <a @click="utente()" class="link">
                 <img src="../assets/bx_bxs-user.png" alt="utente" />
                 Profilo
-            </router-link>
+            </a>
         </div>
     </div>
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
     name: 'PaginaHome',
     data() {
-        return {};
+        return {
+            eventi: [],
+        };
     },
-    methods: {},
+    async mounted() {
+        console.log(localStorage.tipo);
+        console.log(JSON.parse(localStorage.user));
+        if (localStorage.tipo == 'u') {
+            await axios
+                .post('http://localhost/kanpai/back-End/PaginaHome.php', {
+                    id: JSON.parse(localStorage.user).idUtente,
+                })
+                .then((response) => {
+                    this.eventi = response.data;
+                    console.log(this.eventi);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        }
+    },
+    methods: {
+        utente() {
+            if (localStorage.getItem('tipo') == 'u') {
+                this.$router.push('/area-personale-utente');
+            } else this.$router.push('/area-personale-bar');
+        },
+        crea() {
+            if (localStorage.getItem('tipo') == 'u') {
+                this.$router.push('/crea-evento-utente');
+            } else this.$router.push('/crea-evento-bar');
+        },
+        event(i) {
+            localStorage.setItem('evento', i);
+            this.$router.push('/evento-utente');
+        },
+    },
 };
 </script>
 

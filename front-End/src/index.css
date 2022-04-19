@@ -374,7 +374,6 @@ body {
     z-index: 1;
     background-color: grey;
     top: 0;
-    display: none;
 }
 
 #contLogOut {
@@ -391,7 +390,6 @@ body {
     flex-direction: column;
     align-content: space-around;
     border-radius: 20px;
-    display: none;
 }
 
 #inLogOut {
@@ -716,7 +714,7 @@ input[type='checkbox']:checked::before {
     border: 0;
 }
 
-.bottoneris > a > button {
+.bottoneris > button {
     border: 0;
     color: white;
     font-weight: 600;
