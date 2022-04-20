@@ -1,9 +1,11 @@
 <template>
     <div>
-        <a href="javascript:history.go(-1)" onMouseOver="self.status=document.referrer;return true">
-            <img src="../assets/left arrow.png" alt="freccia" class="freccia" />
-        </a>
-        <div class="titoli" style="display: inline-block">Crea evento</div>
+        <div class="indietro">
+            <a href="javascript:history.go(-1)" onMouseOver="self.status=document.referrer;return true">
+                <img src="../assets/left arrow.png" alt="freccia" class="freccia" />
+            </a>
+            <div class="titoli" style="display: inline-block">Crea evento</div>
+        </div>
 
         <div class="fotobarevento">
             <img src="../assets/foto_bar.png" alt="" />
@@ -67,7 +69,7 @@
         </div>
 
         <div class="bottonecrea">
-            <button @click="creaEvento()" class="btn"> Crea</button>
+            <button @click="creaEvento()" class="btn"><img src="../assets/piu.png" alt="per unirsi ad un evento" style="width: 16px; height: 16px" /> Crea</button>
         </div>
     </div>
 </template>
@@ -93,22 +95,23 @@ export default {
     },
     methods: {
         async creaEvento() {
-            await axios.post('http://localhost/kanpai/back-End/CreaEventoUtente.php', {
-                nome: this.nome,
-                descrizione: this.descrizione,
-                categoria: this.categoria,
-                np: this.np,
-                id: this.id,
-                data: this.data,
-                time: this.time,
-            })
-            .then(response => {
-                this.$router.push('/pagina-successo');
-                console.log(response);
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
+            await axios
+                .post('http://localhost/kanpai/back-End/CreaEventoUtente.php', {
+                    nome: this.nome,
+                    descrizione: this.descrizione,
+                    categoria: this.categoria,
+                    np: this.np,
+                    id: this.id,
+                    data: this.data,
+                    time: this.time,
+                })
+                .then((response) => {
+                    this.$router.push('/pagina-successo');
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
         },
     },
 };

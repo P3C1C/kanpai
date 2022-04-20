@@ -5,22 +5,22 @@
             <img src="../assets/imgUser.png" alt="" />
         </div>
         <div class="titoloEventi">{{ nome }} {{ cognome }}</div>
-        <div id="modProf" class="aPerTxt">
+        <div class="aPerTxt">
             <router-link tag="a" to="modifica-profilo-utente"> <img src="../assets/modProf.png" class="ico" alt="" />Modifica Profilo </router-link>
         </div>
-        <div id="impostazioni" class="aPerTxt">
+        <div class="aPerTxt">
             <router-link tag="a" to="creati-da-me"> <img src="../assets/Star.png" class="ico" alt="" />Creati da me </router-link>
         </div>
-        <div id="eventiPersonali" class="aPerTxt">
+        <div class="aPerTxt">
             <router-link tag="a" to="pagina-impostazioni"> <img src="../assets/imp.png" class="ico" alt="" />Impostazioni </router-link>
         </div>
-        <div id="faq" class="aPerTxt">
+        <div class="aPerTxt">
             <router-link tag="a" to="FAQ"> <img src="../assets/faq.png" class="ico" alt="" />FAQ </router-link>
         </div>
         <div id="privacy" class="aPerTxt">
             <router-link tag="a" to="pagina-privacy"> <img src="../assets/priv.png" class="ico" alt="" />privacy </router-link>
         </div>
-        <div id="logOut" class="aPerTxt">
+        <div class="aPerTxt">
             <a @click="out(true)"> <img src="../assets/logOut.png" class="ico" alt="" />Log Out </a>
         </div>
 
@@ -88,6 +88,8 @@ export default {
             this.logout = v;
         },
         esci() {
+            localStorage.removeItem('user');
+            localStorage.removeItem('tipo');
             this.$router.push('/');
         }
     },

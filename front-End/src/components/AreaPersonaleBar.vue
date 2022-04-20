@@ -21,19 +21,21 @@
             <router-link tag="a" to="pagina-privacy"> <img src="../assets/priv.png" class="ico" alt="" />privacy </router-link>
         </div>
         <div id="logOut" class="aPerTxt">
-            <router-link tag="a" to=""> <img src="../assets/logOut.png" class="ico" alt="" />Log Out </router-link>
+            <a @click="out(true)"> <img src="../assets/logOut.png" class="ico" alt="" />Log Out </a>
         </div>
 
         <!-- ----------------------- logOut ---------------------------------------->
-        <div id="sfondoLogOut"></div>
-        <div id="contLogOut">
-            <div id="inLogOut">Sicuro di voler uscire?</div>
-            <div id="confAnn">
-                <div class="confAnn" id="conferma">
-                    <a href="../index.html" style="color: white"> Conferma </a>
-                </div>
-                <div class="confAnn" id="annulla" onclick="notShow()">
-                    <a style="color: white"> Annulla </a>
+        <div v-if="logout">
+            <div id="sfondoLogOut"></div>
+            <div id="contLogOut">
+                <div id="inLogOut">Sicuro di voler uscire?</div>
+                <div id="confAnn">
+                    <div class="confAnn" id="conferma">
+                        <a @click="esci()" style="color: white"> Conferma </a>
+                    </div>
+                    <div class="confAnn" id="annulla" @click="out(false)">
+                        <a> Annulla </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -69,6 +71,7 @@ export default {
         return {
             nome: '',
             cognome: '',
+            logout: false,
         };
     },
     mounted() {
@@ -81,6 +84,14 @@ export default {
                 this.$router.push('/crea-evento-utente');
             } else this.$router.push('/crea-evento-bar');
         },
+        out(v) {
+            this.logout = v;
+        },
+        esci() {
+            localStorage.removeItem('user');
+            localStorage.removeItem('tipo');
+            this.$router.push('/');
+        }
     },
 };
 </script>

@@ -1,9 +1,11 @@
 <template>
     <div>
-        <a href="javascript:history.go(-1)" onMouseOver="self.status=document.referrer;return true">
-            <img src="../assets/left arrow.png" alt="freccia" class="freccia" />
-        </a>
-        <div class="titoli" style="display: inline-block">Modifica evento</div>
+        <div class="indietro">
+            <a href="javascript:history.go(-1)" onMouseOver="self.status=document.referrer;return true">
+                <img src="../assets/left arrow.png" alt="freccia" class="freccia" />
+            </a>
+            <div class="titoli" style="display: inline-block">Modifica evento</div>
+        </div>
 
         <div class="fotobarevento">
             <img src="../assets/foto_bar.png" alt="" />

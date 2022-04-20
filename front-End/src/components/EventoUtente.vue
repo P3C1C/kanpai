@@ -56,7 +56,7 @@
 
         <div style="text-align: center">
             <button v-if="bottone" @click="partecipa(false)" type="button" class="btn">
-                <img src="../assets/joinButton.png" alt="per unirsi ad un evento" style="width: 16px; height: 16px" />
+                <img src="../assets/unisciti.png" alt="per unirsi ad un evento" style="width: 16px; height: 16px" />
                 Partecipa
             </button>
             <button v-else @click="partecipa(true)" type="button" class="btn">Disdici</button>

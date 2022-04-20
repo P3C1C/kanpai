@@ -1,9 +1,11 @@
 <template>
     <div>
-        <a href="javascript:history.go(-1)" onMouseOver="self.status=document.referrer;return true">
-            <img src="../assets/left arrow.png" alt="freccia" class="freccia" />
-        </a>
-        <div class="titoli" style="display: inline-block">Creati Da Me</div>
+        <div class="indietro">
+            <a href="javascript:history.go(-1)" onMouseOver="self.status=document.referrer;return true">
+                <img src="../assets/left arrow.png" alt="freccia" class="freccia" />
+            </a>
+            <div class="titoli" style="display: inline-block">Creati da me</div>
+        </div>
 
         <div v-if="tipo == 'u'" class="elementi">
             <a v-for="(item, index) in evento" @click="modifica(item)" class="linkh" :key="index">

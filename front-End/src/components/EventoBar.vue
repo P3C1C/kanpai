@@ -28,7 +28,7 @@
 
         <div style="text-align: center">
             <router-link to="pagina-bar" tag="button" class="btn">
-                <img src="../assets/occhio.png" alt="per unirsi ad un evento" style="width: 16px; height: 16px" />
+                <img src="../assets/visita.png" alt="per unirsi ad un evento" style="width: 16px; height: 16px" />
                 Visita il Bar
             </router-link>
         </div>

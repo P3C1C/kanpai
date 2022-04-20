@@ -1,7 +1,6 @@
 import Vue from "vue";
 import App from "./App.vue";
 import VueRouter from "vue-router";
-import VueSession from 'vue-session';
 
 import PrimaPagina from "@/components/PrimaPagina.vue";
 import PaginaRegistrazione from "@/components/PaginaRegistrazione.vue";
@@ -27,11 +26,6 @@ import PaginaPrivacy from "@/components/PaginaPrivacy.vue";
 import PaginaSuccesso from "@/components/PaginaSuccesso.vue";
 import PaginaErrore from "@/components/PaginaErrore.vue";
 
-var options = {
-    persist: true
-}
-
-Vue.use(VueSession, options)
 Vue.use(VueRouter);
 
 const routes = [
@@ -155,6 +149,19 @@ const routes = [
 const router = new VueRouter({
     mode: "history",
     routes, // short for `routes: routes`
+});
+
+router.beforeEach((to, from, next) => {
+    if (
+        to.path !== "/" &&
+        to.path !== "/pagina-registrazione" &&
+        to.path !== "/pagina-accesso" &&
+        (!localStorage.tipo || !localStorage.user)
+    ) {
+        console.log("non loggato");
+        next("/");
+    }
+    next();
 });
 
 Vue.config.productionTip = false;
